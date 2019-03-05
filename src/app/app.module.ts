@@ -7,7 +7,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-
+import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -17,6 +17,19 @@ import { ProductCategoriesComponent } from './shared/product-categories/product-
 import { HomeComponent } from './home/home.component';
 import {ProductCarouselComponent} from './home/product-carousel/product-carousel.component';
 import { DailyDealsSummaryComponent } from './home/daily-deals-summary/daily-deals-summary.component';
+import { ProductComponent } from './product/product.component';
+import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.component';
+import { FilterComponent } from './product/filter/filter.component';
+import { ProductListingComponent } from './product/product-listing/product-listing.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'home/:id', component: HomeComponent },
+  { path: 'product/:id',      component: ProductComponent },
+  { path: '', redirectTo: 'home', pathMatch:'full'},
+  { path: '**', component: PagenotfoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +39,12 @@ import { DailyDealsSummaryComponent } from './home/daily-deals-summary/daily-dea
     ProductCategoriesComponent,
     HomeComponent,
     ProductCarouselComponent,
-    DailyDealsSummaryComponent
+    DailyDealsSummaryComponent,
+    ProductComponent,
+    PagenotfoundComponent,
+    FilterComponent,
+    ProductListingComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +54,11 @@ import { DailyDealsSummaryComponent } from './home/daily-deals-summary/daily-dea
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),
     TypeaheadModule.forRoot(),
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
