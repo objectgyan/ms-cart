@@ -26,8 +26,9 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/:id', component: HomeComponent },
-  { path: 'product/:id',      component: ProductComponent },
-  { path: '', redirectTo: 'home', pathMatch:'full'},
+  { path: 'products/:category/:id',      component: ProductComponent },
+  { path: 'products/:category',      component: ProductComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '**', component: PagenotfoundComponent }
 ];
 

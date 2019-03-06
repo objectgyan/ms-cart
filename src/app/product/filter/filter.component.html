@@ -1,18 +1,20 @@
 <h2>Filters</h2>
 <hr />
-<form action="/action_page.php">
+<form>
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" />
+    <label for="price">Price</label>
+    <input type="range" min="1" max="100" value="50" class="form-control" id="price" name="price">
+    {{selectedPrice}}
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" class="form-control" id="pwd" />
+    <input type="text" class="form-control" id="pwd" [(ngModel)]="selectedPrice" />
+    {{selectedPrice}}
   </div>
   <div class="form-group form-check">
     <label class="form-check-label">
       <input class="form-check-input" type="checkbox" /> Remember me
     </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary">Submit</button>
 </form>
