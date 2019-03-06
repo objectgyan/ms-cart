@@ -26,6 +26,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/:id', component: HomeComponent },
+  { path: 'productsdetails/:id',      component: ProductDetailComponent },
   { path: 'products/:category/:id',      component: ProductComponent },
   { path: 'products/:category',      component: ProductComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -57,8 +58,9 @@ const appRoutes: Routes = [
     TypeaheadModule.forRoot(),
     FormsModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
+      // ,
+      // { enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],
