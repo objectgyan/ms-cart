@@ -19,11 +19,14 @@ export class ProductListingComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.category = params["category"];
+      this.onFilterChanged();
+      console.log('invoked');
     });
 
     this.route.queryParams.subscribe(params => {
       this.price = +params["price"];
       this.onFilterChanged();
+      console.log('invoked');
   });
   }
 
