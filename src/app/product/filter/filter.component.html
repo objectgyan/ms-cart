@@ -3,12 +3,12 @@
 <form>
   <div class="form-group">
     <label for="price">Price</label>
-    <input type="range" min="10" max="1000" step="50" (input)="onRangeSelectionCompleted($event)" class="form-control" id="price" name="price" [(ngModel)]="selectedPrice">
+    <input type="range" min="100" max="1000" step="200" (input)="onRangeSelectionCompleted($event)" class="form-control" id="price" name="price" [(ngModel)]="selectedPrice">
     {{selectedPrice}}
   </div>
   <div class="form-group">
     <label for="pwd">Search Text:</label>
-    <input type="text" class="form-control" id="Search" name="Search" [(ngModel)]="selectedText" />
+    <input type="text" class="form-control" id="Search" name="Search" [(ngModel)]="selectedCategory" />
   </div>
   <button type="button" class="btn btn-primary">Submit</button>
 </form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductCategoryService } from 'src/app/productcategory.service';
 
 @Component({
   selector: 'app-product-categories',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCategoriesComponent implements OnInit {
   isCollapsed = true;
-  constructor() { }
+  categories : any;
+  constructor(private productCategoryService : ProductCategoryService) { }
 
   ngOnInit() {
+    this.setCategories();
   }
 
+  setCategories(){
+    this.productCategoryService.getAllCategories().
+    subscribe( data => {
+      this.categories = data;
+    });
+  }
 }

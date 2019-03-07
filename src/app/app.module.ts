@@ -8,6 +8,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -22,6 +23,11 @@ import { PagenotfoundComponent } from './shared/pagenotfound/pagenotfound.compon
 import { FilterComponent } from './product/filter/filter.component';
 import { ProductListingComponent } from './product/product-listing/product-listing.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+
+
+import { ProductService } from './product.service';
+import { ProductCategoryService } from './productcategory.service';
+
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -57,13 +63,14 @@ const appRoutes: Routes = [
     CarouselModule.forRoot(),
     TypeaheadModule.forRoot(),
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes
       // ,
       // { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [ProductService, ProductCategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

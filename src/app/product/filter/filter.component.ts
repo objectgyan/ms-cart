@@ -8,22 +8,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FilterComponent implements OnInit{
   selectedPrice = 10;
-
-  selectedText = '';
-
+  selectedCategory = '';
   constructor(private route: ActivatedRoute,private router: Router) {
 
   }
 
   ngOnInit() {
-    console.log(this.route.queryParams);
-    this.selectedPrice = this.route.queryParams['price'];
     this.route.queryParams.subscribe(params => {
-      console.log('invoked ' + params['price']);
-  });
+      this.selectedPrice = params['price'];
+    });
+
+    this.route.params.subscribe(params => {
+      this.selectedCategory = params['category'];
+    });
   }
 
   onRangeSelectionCompleted(event: any ){
-    this.router.navigate(['/products/watches'],{queryParams:{'price': this.selectedPrice}});
+    this.router.navigate(['/products/' + this.selectedCategory],{queryParams:{'price': this.selectedPrice}});
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService, ProductModel } from 'src/app/product.service';
 
 @Component({
   selector: 'app-product-listing',
@@ -7,24 +8,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-listing.component.css']
 })
 export class ProductListingComponent implements OnInit {
+  category : 'all';
+  price : any;
+  productList : ProductModel[] = [];
 
-  selectedPrice = 10;
-
-  selectedText = '';
-
-  constructor(private route: ActivatedRoute, private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) {
 
   }
 
   ngOnInit() {
-  //   this.route.queryParams.subscribe(params => {
-  //     console.log('invoked ' + params['price']);
-  //     this.selectedPrice = params['price'];
-  // });
+    this.route.params.subscribe(params => {
+      this.category = params["category"];
+    });
+
+    this.route.queryParams.subscribe(params => {
+      this.price = +params["price"];
+      this.onFilterChanged();
+  });
   }
 
-  onRangeSelectionCompleted(event: any ){
-    //this.router.navigate(['/products/watches'],{queryParams:{'price': this.selectedPrice}});
+  onFilterChanged(){
+    this.productService.getAllProducts().
+    subscribe( data => {
+      this.productList = data.filter(c => c.price <= this.price && c.category.toLowerCase() === this.category.toLowerCase());
+    });
   }
-
 }
