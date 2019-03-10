@@ -1,12 +1,12 @@
 <span class="badge badge-secondary">Deals of the day</span>
 <div class="card">
   <div class="row">
-    <div class="col" *ngFor="let product of this.productList">
+    <div class="col" *ngFor="let product of this.getFilterProducts('dd')">
       <div class="card" style="width: 13rem;">
         <img
           class="card-img-top img-thumbnail"
-          src="https://rukminim1.flixcart.com/flap/300/300/image/d60d3f.jpg?q=70"
-          alt="Card image cap"
+          src="{{product.image}}"
+          alt="Card image cap" style="widows: 200px;height:250px;"
         />
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
@@ -22,12 +22,12 @@
 <span class="badge badge-secondary">Featured Products</span>
 <div class="card">
   <div class="row">
-    <div class="col" *ngFor="let product of this.productList">
+    <div class="col" *ngFor="let product of this.getFilterProducts('fp')">
       <div class="card" style="width: 13rem;">
         <img
           class="card-img-top img-thumbnail"
-          src="https://rukminim1.flixcart.com/flap/300/300/image/d60d3f.jpg?q=70"
-          alt="Card image cap"
+          src="{{product.image}}"
+          alt="Card image cap" style="widows: 200px;height:250px;"
         />
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>

@@ -21,7 +21,8 @@ export class ProductService {
 
 export class ProductModel{
     'id': '';
-    'category': '';
+    'category': string;
     'name': 'Fuji Apples';
-    'price' : Float32Array ;
+    'price': Float32Array ;
+    'image': string;
 }
