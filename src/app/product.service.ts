@@ -20,9 +20,8 @@ export class ProductService {
 }
 
 export class ProductModel{
-    'id': '';
-    'category': string;
-    'name': 'Fuji Apples';
-    'price': Float32Array ;
-    'image': string;
+
+  constructor(public id: string, public category: string, public name: string, public price: Float32Array, public image: string) {
+
+  }
 }

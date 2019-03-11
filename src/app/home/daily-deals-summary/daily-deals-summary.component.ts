@@ -8,7 +8,9 @@ import { ProductService, ProductModel } from 'src/app/product.service';
 })
 export class DailyDealsSummaryComponent implements OnInit {
 
-  productList : ProductModel[];
+  productList : ProductModel[] = [];
+  data : ProductModel[] = [];
+  product : ProductModel;
 
   constructor(private productService: ProductService) { }
 
@@ -20,7 +22,11 @@ export class DailyDealsSummaryComponent implements OnInit {
     this.productService.getAllProducts().
     subscribe( data => {
       this.productList = data;
-      // filter(c=>c.price>= new Float32Array(Math.random())).slice(0,6);
+    //   for (let i in data) {
+    //     this.productList.push(new ProductModel(data[i].id,data[i].category,"Dummy Text",data[i].price,data[i].image));
+    //  }
+    //  //console.log(this.productList);
+    //  console.log(JSON.stringify(this.productList));
     });
   }
 
