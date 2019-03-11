@@ -559,23 +559,277 @@
     "price": 860,
     "image": "/assets/fashion/images(21).jpg"
   },
-  { "id": 1, "category": "Men", "name": "Dummy Text", "price": 798 , "image": "/assets/fashion/images(1).jpg"},
-  { "id": 4, "category": "Men", "name": "Dummy Text", "price": 284 , "image": "/assets/fashion/images(2).jpg"},
-  { "id": 5, "category": "Men", "name": "Dummy Text", "price": 148 , "image": "/assets/fashion/images(3).jpg"},
-  { "id": 9, "category": "Men", "name": "Dummy Text", "price": 735 , "image": "/assets/fashion/images(4).jpg"},
-  { "id": 17, "category": "Men", "name": "Dummy Text", "price": 740 , "image": "/assets/fashion/images(5).jpg"},
-  { "id": 31, "category": "Men", "name": "Dummy Text", "price": 839 , "image": "/assets/fashion/images(6).jpg"},
-  { "id": 34, "category": "Men", "name": "Dummy Text", "price": 492 , "image": "/assets/fashion/images(7).jpg"},
-  { "id": 42, "category": "Men", "name": "Dummy Text", "price": 974 , "image": "/assets/fashion/images(8).jpg"},
-  { "id": 45, "category": "Men", "name": "Dummy Text", "price": 240 , "image": "/assets/fashion/images(9).jpg"},
-  { "id": 48, "category": "Men", "name": "Dummy Text",  "price": 289 , "image": "/assets/fashion/images(10).jpg"},
-  { "id": 52, "category": "Men", "name": "Dummy Text", "price": 676 , "image": "/assets/fashion/images(21).jpg"},
-  { "id": 53, "category": "Men", "name": "Dummy Text", "price": 464 , "image": "/assets/fashion/images(22).jpg"},
-  { "id": 58, "category": "Men", "name": "Dummy Text", "price": 384 , "image": "/assets/fashion/images(23).jpg"},
-  { "id": 59, "category": "Men", "name": "Dummy Text", "price": 291 , "image": "/assets/fashion/images(24).jpg"},
-  { "id": 65, "category": "Men", "name": "Dummy Text", "price": 887 , "image": "/assets/fashion/images(25).jpg"},
-  { "id": 68, "category": "Men", "name": "Dummy Text", "price": 223 , "image": "/assets/fashion/images(21).jpg"},
-  { "id": 80, "category": "Men", "name": "Dummy Text", "price": 160 , "image": "/assets/fashion/images(11).jpg"},
-  { "id": 92, "category": "Men", "name": "Dummy Text", "price": 103 , "image": "/assets/fashion/images(12).jpg"},
-  { "id": 96, "category": "Men", "name": "Dummy Text", "price": 229 , "image": "/assets/fashion/images(13).jpg"}
+  {
+    "id": 1,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 798,
+    "image": "/assets/fashion/images(1).jpg"
+  },
+  {
+    "id": 4,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 284,
+    "image": "/assets/fashion/images(2).jpg"
+  },
+  {
+    "id": 5,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 148,
+    "image": "/assets/fashion/images(3).jpg"
+  },
+  {
+    "id": 9,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 735,
+    "image": "/assets/fashion/images(4).jpg"
+  },
+  {
+    "id": 17,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 740,
+    "image": "/assets/fashion/images(5).jpg"
+  },
+  {
+    "id": 31,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 839,
+    "image": "/assets/fashion/images(6).jpg"
+  },
+  {
+    "id": 34,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 492,
+    "image": "/assets/fashion/images(7).jpg"
+  },
+  {
+    "id": 42,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 974,
+    "image": "/assets/fashion/images(8).jpg"
+  },
+  {
+    "id": 45,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 240,
+    "image": "/assets/fashion/images(9).jpg"
+  },
+  {
+    "id": 48,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 289,
+    "image": "/assets/fashion/images(10).jpg"
+  },
+  {
+    "id": 52,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 676,
+    "image": "/assets/fashion/images(21).jpg"
+  },
+  {
+    "id": 53,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 464,
+    "image": "/assets/fashion/images(22).jpg"
+  },
+  {
+    "id": 58,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 384,
+    "image": "/assets/fashion/images(23).jpg"
+  },
+  {
+    "id": 59,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 291,
+    "image": "/assets/fashion/images(24).jpg"
+  },
+  {
+    "id": 65,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 887,
+    "image": "/assets/fashion/images(25).jpg"
+  },
+  {
+    "id": 68,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 223,
+    "image": "/assets/fashion/images(21).jpg"
+  },
+  {
+    "id": 80,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 160,
+    "image": "/assets/fashion/images(11).jpg"
+  },
+  {
+    "id": 92,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 103,
+    "image": "/assets/fashion/images(12).jpg"
+  },
+  {
+    "id": 110,
+    "category": "Men",
+    "name": "Dummy Text",
+    "price": 229,
+    "image": "/assets/fashion/images(13).jpg"
+  },
+  {
+    "id": 111,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 798,
+    "image": "/assets/fashion/images(1).jpg"
+  },
+  {
+    "id": 112,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 284,
+    "image": "/assets/fashion/images(2).jpg"
+  },
+  {
+    "id": 5,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 148,
+    "image": "/assets/fashion/images(3).jpg"
+  },
+  {
+    "id": 9,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 735,
+    "image": "/assets/fashion/images(4).jpg"
+  },
+  {
+    "id": 17,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 740,
+    "image": "/assets/fashion/images(5).jpg"
+  },
+  {
+    "id": 31,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 839,
+    "image": "/assets/fashion/images(6).jpg"
+  },
+  {
+    "id": 34,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 492,
+    "image": "/assets/fashion/images(7).jpg"
+  },
+  {
+    "id": 42,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 974,
+    "image": "/assets/fashion/images(8).jpg"
+  },
+  {
+    "id": 45,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 240,
+    "image": "/assets/fashion/images(9).jpg"
+  },
+  {
+    "id": 48,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 289,
+    "image": "/assets/fashion/images(10).jpg"
+  },
+  {
+    "id": 52,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 676,
+    "image": "/assets/fashion/images(21).jpg"
+  },
+  {
+    "id": 53,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 464,
+    "image": "/assets/fashion/images(22).jpg"
+  },
+  {
+    "id": 58,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 384,
+    "image": "/assets/fashion/images(23).jpg"
+  },
+  {
+    "id": 59,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 291,
+    "image": "/assets/fashion/images(24).jpg"
+  },
+  {
+    "id": 65,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 887,
+    "image": "/assets/fashion/images(25).jpg"
+  },
+  {
+    "id": 68,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 223,
+    "image": "/assets/fashion/images(21).jpg"
+  },
+  {
+    "id": 80,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 160,
+    "image": "/assets/fashion/images(11).jpg"
+  },
+  {
+    "id": 92,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 103,
+    "image": "/assets/fashion/images(12).jpg"
+  },
+  {
+    "id": 96,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 229,
+    "image": "/assets/fashion/images(13).jpg"
+  },
+  {
+    "id": 966,
+    "category": "Women",
+    "name": "Dummy Text",
+    "price": 100,
+    "image": "/assets/fashion/images(13).jpg"
+  }
 ]
