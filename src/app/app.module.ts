@@ -10,6 +10,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     CarouselModule.forRoot(),
     TypeaheadModule.forRoot(),
     AlertModule.forRoot(),
+    AccordionModule.forRoot(),
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(

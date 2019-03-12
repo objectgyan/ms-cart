@@ -11,6 +11,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   product: ProductModel;
   productIdentifierSub: any;
+  showCartMessage: any = false;
   id: string;
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
@@ -40,7 +41,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   onClosed(){
-    
+    this.showCartMessage = true;
   }
 
 }
