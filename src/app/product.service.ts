@@ -19,7 +19,7 @@ export class ProductService {
   }
 }
 
-export class ProductModel{
+export class ProductModel {
 
   constructor(public id: string, public category: string, public name: string, public price: Float32Array, public image: string) {
 

@@ -1,8 +1,13 @@
 <div class="row" style="min-height: 500px !important">
   <div class="col-4 card">
-    DFGDG
+    <img src="{{ product?.image }}" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ product?.name }}</h5>
+      <p class="card-text">Price : {{ product?.price }}</p>
+      <button *ngIf="!itemAdded" type="button" class="btn btn-primary" (click)="add()">Add to Cart</button>
+      <alert *ngIf="itemAdded" [dismissOnTimeout]="3000" type="success" (onClosed)="onClosed(alert)">Item added to cart</alert>
+      <h3 *ngIf="itemAdded">Item added to cart</h3>
+    </div>
   </div>
-  <div class="col-lg-6">
-    DFGDFG
-  </div>
+  <div class="col-lg-6"></div>
 </div>

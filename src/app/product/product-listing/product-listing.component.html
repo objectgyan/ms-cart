@@ -1,20 +1,23 @@
-<div class="d-flex p-2">
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let product of productList">
-      <div class="card" style="width: 13rem;">
-        <img
-          class="card-img-top img-thumbnail" style="widows: 200px;height:250px;"
+<div class="card-deck mb-3 text-center">
+  <div class="col-lg-3" *ngFor="let product of productList" style="padding-top: 5px;">
+    <div class="card card-body">
+      <h1 class="card-title">{{product.name}}</h1>
+      <img
+          style="width: 200px;height:250px;"
           src={{product.image}}
           alt="Card image cap"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">
-             Price : {{product.price}}
-          </p>
-          <a routerLink="/productsdetails/{{product.id}}" routerLinkActive="active">{{product.category}} - View</a>
-        </div>
-      </div>
+        /> 
+      <!-- <ul class="list-unstyled mt-3 mb-4">
+        <li>10 users included</li>
+        <li>2 GB of storage</li>
+        <li>Email support</li>
+        <li>Help center access</li>
+      </ul> -->
+      <h4 class="my-0 font-weight-normal">${{product.price}}</h4>
+      <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
+    </div>
+    <div class="card card-header">
+      <a class="my-0 font-weight-normal" routerLink="/productsdetails/{{product.id}}" routerLinkActive="active">View</a>
     </div>
   </div>
 </div>

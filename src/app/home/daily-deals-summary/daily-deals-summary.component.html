@@ -1,19 +1,35 @@
 <span class="badge badge-secondary">Deals of the day</span>
 <div class="card">
   <div class="row">
-    <div class="col" *ngFor="let product of this.getFilterProducts('dd')">
-      <div class="card" style="width: 13rem;">
-        <img
-          class="card-img-top img-thumbnail"
-          src="{{product.image}}"
-          alt="Card image cap" style="widows: 200px;height:250px;"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">
-            Price : {{product.price}}
-          </p>
-          <a routerLink="/productsdetails/{{product.id}}" routerLinkActive="active">View</a>
+    <div class="card-deck mb-3 text-center">
+      <div
+        class="col-lg-2"
+        *ngFor="let product of this.getFilterProducts('dd')"
+        style="padding-top: 5px;"
+      >
+        <div class="card card-body">
+          <h2 class="card-title">{{ product.name }}</h2>
+          <img
+            style="width: 200px;height:250px;"
+            src="{{ product.image }}"
+            alt="Card image cap"
+          />
+          <!-- <ul class="list-unstyled mt-3 mb-4">
+                <li>10 users included</li>
+                <li>2 GB of storage</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+              </ul> -->
+          <h4 class="my-0 font-weight-normal">${{ product.price }}</h4>
+          <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
+        </div>
+        <div class="card card-header">
+          <a
+            class="my-0 font-weight-normal"
+            routerLink="/productsdetails/{{ product.id }}"
+            routerLinkActive="active"
+            >View</a
+          >
         </div>
       </div>
     </div>
@@ -21,22 +37,38 @@
 </div>
 <span class="badge badge-secondary">Featured Products</span>
 <div class="card">
-  <div class="row">
-    <div class="col" *ngFor="let product of this.getFilterProducts('fp')">
-      <div class="card" style="width: 13rem;">
-        <img
-          class="card-img-top img-thumbnail"
-          src="{{product.image}}"
-          alt="Card image cap" style="widows: 200px;height:250px;"
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">
-            Price : {{product.price}}
-          </p>
-          <a routerLink="/productsdetails/{{product.id}}" routerLinkActive="active">View</a>
+    <div class="row">
+      <div class="card-deck mb-3 text-center">
+        <div
+          class="col-lg-2"
+          *ngFor="let product of this.getFilterProducts('fp')"
+          style="padding-top: 5px;"
+        >
+          <div class="card card-body">
+            <h2 class="card-title">{{ product.name }}</h2>
+            <img
+              style="width: 200px;height:250px;"
+              src="{{ product.image }}"
+              alt="Card image cap"
+            />
+            <!-- <ul class="list-unstyled mt-3 mb-4">
+                  <li>10 users included</li>
+                  <li>2 GB of storage</li>
+                  <li>Email support</li>
+                  <li>Help center access</li>
+                </ul> -->
+            <h4 class="my-0 font-weight-normal">${{ product.price }}</h4>
+            <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
+          </div>
+          <div class="card card-header">
+            <a
+              class="my-0 font-weight-normal"
+              routerLink="/productsdetails/{{ product.id }}"
+              routerLinkActive="active"
+              >View</a
+            >
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
