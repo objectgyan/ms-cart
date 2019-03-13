@@ -2,11 +2,11 @@
   <div class="col-4">
     <div class="card-deck mb-4 text-center">
       <div class="card card-body" style="min-height: 700px !important">
-        <h2 class="card-title">{{ product?.name }}</h2>
+        <h2 class="card-title">{{product?.name}}</h2>
         <img
           style="height:250px;"
-          src="{{ product?.image }}"
-          alt="Card image cap"
+          src="{{product?.image}}"
+          alt="{{product?.name}}"
         />
         <hr />
         <button
@@ -28,7 +28,7 @@
         <h4 class="my-0 font-weight-normal">${{ product?.price }}</h4>
         <a
           class="card-header my-0 font-weight-normal"
-          routerLink="/productsdetails/{{ product?.id }}"
+          routerLink="/productsdetails/{{product?.id}}"
           routerLinkActive="active"
           >Back</a
         >
@@ -36,17 +36,17 @@
     </div>
   </div>
   <div class="col-lg-6">
-      <accordion>
+      <accordion [closeOthers]="true">
           <accordion-group heading="Product Description" [isOpen]="true">
               This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.
           </accordion-group>
-          <accordion-group heading="Specification" [isOpen]="true">
+          <accordion-group heading="Specification">
             <p>Some content</p>
           </accordion-group>
-          <accordion-group heading="Q&A" [isOpen]="true">
+          <accordion-group heading="Q&A">
             <p>Some content</p>
           </accordion-group>
-          <accordion-group heading="Ratings & Reviews" [isOpen]="true">
+          <accordion-group heading="Ratings & Reviews">
             <p>This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.</p>
           </accordion-group>
         </accordion>

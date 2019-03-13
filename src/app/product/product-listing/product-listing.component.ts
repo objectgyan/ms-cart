@@ -1,22 +1,24 @@
-import { Component, OnInit , OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService, ProductModel } from 'src/app/product.service';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { ProductService, ProductModel } from "src/app/product.service";
 
 @Component({
-  selector: 'app-product-listing',
-  templateUrl: './product-listing.component.html',
-  styleUrls: ['./product-listing.component.css']
+  selector: "app-product-listing",
+  templateUrl: "./product-listing.component.html",
+  styleUrls: ["./product-listing.component.css"]
 })
-export class ProductListingComponent implements OnInit, OnDestroy  {
-  category: 'all';
+export class ProductListingComponent implements OnInit, OnDestroy {
+  category: "all";
   price: any;
   productList: ProductModel[] = [];
   private categorySubs: any;
   private priceSubs: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) {
-
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
     this.categorySubs = this.route.params.subscribe(params => {
@@ -27,14 +29,16 @@ export class ProductListingComponent implements OnInit, OnDestroy  {
     this.priceSubs = this.route.queryParams.subscribe(params => {
       this.price = +params["price"];
       this.onFilterChanged();
-  });
-
+    });
   }
 
-  onFilterChanged(){
-    this.productService.getAllProducts().
-    subscribe( data => {
-      this.productList = data.filter(c => c.price <= this.price && c.category.toLowerCase() === this.category.toLowerCase());
+  onFilterChanged() {
+    this.productService.getAllProducts().subscribe(data => {
+      this.productList = data.filter(
+        c =>
+          c.price <= this.price &&
+          c.category.toLowerCase() === this.category.toLowerCase()
+      );
     });
   }
 
