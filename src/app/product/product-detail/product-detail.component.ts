@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService, ProductModel } from "src/app/product.service";
+import { NotificationService } from "src/app/shared/notification/notification.service";
 
 @Component({
   selector: "app-product-detail",
@@ -14,14 +15,15 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   id: number;
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private notificationService: NotificationService
   ) {}
 
   itemAdded: any = false;
 
   ngOnInit() {
     this.productIdentifierSub = this.route.params.subscribe(params => {
-      this.id = + params["id"];
+      this.id = +params["id"];
       this.getProductById(this.id);
     });
   }
@@ -38,6 +40,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   add() {
     this.itemAdded = !this.itemAdded;
+    this.notificationService.notifyMessage("Product added successfully");
   }
 
   onClosed() {
