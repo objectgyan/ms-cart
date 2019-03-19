@@ -11,6 +11,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { AlertModule } from "ngx-bootstrap/alert";
 import { AccordionModule } from "ngx-bootstrap/accordion";
+import { RatingModule  } from "ngx-bootstrap/rating";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./shared/header/header.component";
@@ -27,7 +28,7 @@ import { ProductDetailComponent } from "./product/product-detail/product-detail.
 
 import { ProductService } from "./product.service";
 import { ProductCategoryService } from "./productcategory.service";
-import { NotificationComponent } from './shared/notification/notification.component';
+import { NotificationComponent } from "./shared/notification/notification.component";
 
 const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     TypeaheadModule.forRoot(),
     AlertModule.forRoot(),
     AccordionModule.forRoot(),
+    RatingModule.forRoot(),
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(

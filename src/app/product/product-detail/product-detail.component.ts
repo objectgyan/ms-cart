@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService, ProductModel } from "src/app/product.service";
 import { NotificationService } from "src/app/shared/notification/notification.service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: "app-product-detail",
@@ -16,7 +17,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private router: Router,
+    private location: Location
   ) {}
 
   itemAdded: any = false;
@@ -46,5 +49,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   onClosed() {
     this.showCartMessage = true;
+  }
+
+  back(){
+    this.location.back()
   }
 }

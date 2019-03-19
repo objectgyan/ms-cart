@@ -2,11 +2,11 @@
   <div class="col-4">
     <div class="card-deck mb-4 text-center">
       <div class="card card-body" style="min-height: 700px !important">
-        <h2 class="card-title">{{product?.name}}</h2>
+        <h2 class="card-title">{{ product?.name }}</h2>
         <img
           style="height:250px;"
-          src="{{product?.image}}"
-          alt="{{product?.name}}"
+          src="{{ product?.image }}"
+          alt="{{ product?.name }}"
         />
         <hr />
         <button
@@ -28,27 +28,95 @@
         <h4 class="my-0 font-weight-normal">${{ product?.price }}</h4>
         <a
           class="card-header my-0 font-weight-normal"
-          routerLink="/productsdetails/{{product?.id}}"
-          routerLinkActive="active"
+          routerLink="/productsdetails/{{ product?.id }}"
+          routerLinkActive="active" (click)="back()"
           >Back</a
         >
       </div>
     </div>
   </div>
   <div class="col-lg-6">
-      <accordion [closeOthers]="true">
-          <accordion-group heading="Product Description" [isOpen]="true">
-              This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.
-          </accordion-group>
-          <accordion-group heading="Specification">
-            <p>Some content</p>
-          </accordion-group>
-          <accordion-group heading="Q&A">
-            <p>Some content</p>
-          </accordion-group>
-          <accordion-group heading="Ratings & Reviews">
-            <p>This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.This content is straight in the template.</p>
-          </accordion-group>
-        </accordion>
+    <accordion [closeOthers]="true">
+      <accordion-group heading="Product Description " [isOpen]="true">
+          <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"7"}}</b></b>
+          <hr />
+        This content is straight in the template.This content is straight in the
+        template.This content is straight in the template.This content is
+        straight in the template.This content is straight in the template.This
+        content is straight in the template.This content is straight in the
+        template.This content is straight in the template.This content is
+        straight in the template.This content is straight in the template.This
+        content is straight in the template.This content is straight in the
+        template.This content is straight in the template.This content is
+        straight in the template.This content is straight in the template.This
+        content is straight in the template.This content is straight in the
+        template.This content is straight in the template.This content is
+        straight in the template.This content is straight in the template.This
+        content is straight in the template.This content is straight in the
+        template.
+      </accordion-group>
+      <accordion-group heading="Specification">
+        <p>Some content</p>
+      </accordion-group>
+      <accordion-group heading="Q&A">
+        <p>Some content</p>
+      </accordion-group>
+      <accordion-group heading="Ratings & Reviews">
+          <div>
+              <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"7"}}</b></b>
+              <hr />
+            This content is straight in the template.This content is straight in
+            the template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.
+          </div>
+          <div>
+              <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"5"}}</b></b>
+              <hr />
+            This content is straight in the template.This content is straight in
+            the template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.
+          </div>
+          <div>
+              <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"7"}}</b></b>
+              <hr />
+            This content is straight in the template.This content is straight in
+            the template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.This content is straight in the template.This content is
+            straight in the template.This content is straight in the template.This
+            content is straight in the template.This content is straight in the
+            template.
+          </div>
+      </accordion-group>
+    </accordion>
   </div>
 </div>
