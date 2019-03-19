@@ -1,17 +1,30 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ProductService {
+
+  itemsInCart: ProductModel[] = [];
+
   dummyProductUrl = "assets/products.json";
+
+  private alertnotificationMessage = new Subject<number>();
+
+  alertNotification$ = this.alertnotificationMessage.asObservable();
+
 
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<ProductModel[]> {
     return this.http.get<ProductModel[]>(this.dummyProductUrl);
+  }
+
+  addItemToCart(productModel: ProductModel){
+    this.itemsInCart.push(productModel);
+    this.alertnotificationMessage.next(this.itemsInCart.length);
   }
 }
 

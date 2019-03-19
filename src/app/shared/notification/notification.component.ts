@@ -7,11 +7,12 @@ import { Observable, Subscription } from "rxjs";
   templateUrl: "./notification.component.html",
   styleUrls: ["./notification.component.css"]
 })
+
 export class NotificationComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   message = "";
   isVisible = false;
-  alerts: any[] = [];
+  alerts: AlertMessage[] = [];
 
   constructor(private notificationService: NotificationService) {}
   
@@ -20,12 +21,17 @@ export class NotificationComponent implements OnInit, OnDestroy {
   }
 
   setMessage(msg: string){
-    this.alerts.push({type:"success", msg: msg, timeout:"2000"});
-    //this.alerts[0].msg = msg;
+    this.alerts.push(new AlertMessage("success", msg, "2000"));
     this.isVisible = true;
   }
 
   ngOnDestroy(){
     this.subscription.unsubscribe();
+  }
+}
+
+export class AlertMessage {
+  constructor(public type: string, public message: string, public timeout: string) {
+
   }
 }

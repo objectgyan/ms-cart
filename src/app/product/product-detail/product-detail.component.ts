@@ -38,8 +38,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this.productIdentifierSub.unsubscribe();
   }
 
-  add() {
+  add(product: ProductModel) {
     this.itemAdded = !this.itemAdded;
+    this.productService.addItemToCart(product);
     this.notificationService.notifyMessage("Product added successfully");
   }
 

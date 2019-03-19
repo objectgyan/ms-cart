@@ -1,0 +1,20 @@
+a.fa-bell {
+    position: relative;
+    font-size: 2em;
+    color: black;
+    cursor: pointer;
+  }
+  span.fa-comment {
+    position: absolute;
+    font-size: 0.6em;
+    top: -4px;
+    color: white;
+    right: -4px;
+  }
+  span.num {
+    position: absolute;
+    font-size: 0.3em;
+    top: 1px;
+    color: black;
+    right: 2px;
+  }
