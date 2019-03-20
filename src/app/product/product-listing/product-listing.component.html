@@ -1,23 +1,32 @@
 <div class="card-deck mb-3 text-center">
-  <div class="col-lg-3" *ngFor="let product of productList" style="padding-top: 5px;">
+  <div
+    class="col-lg-3"
+    *ngFor="let product of productList"
+    style="padding-top: 5px;"
+  >
     <div class="card card-body">
-      <h1 class="card-title">{{product.name}}</h1>
+      <h1 class="card-title">{{ product.name }}</h1>
       <img
-          style="width: 200px;height:250px;"
-          src={{product.image}}
-          alt="Card image cap"
-        /> 
-      <!-- <ul class="list-unstyled mt-3 mb-4">
-        <li>10 users included</li>
-        <li>2 GB of storage</li>
-        <li>Email support</li>
-        <li>Help center access</li>
-      </ul> -->
-      <h4 class="my-0 font-weight-normal">${{product.price}}</h4>
-      <!-- <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
+        style="width: 200px;height:250px;"
+        src="{{ product.image }}"
+        alt="Card image cap"
+      />
+      <h4 class="my-0 font-weight-normal">${{ product.price }}</h4>
     </div>
     <div class="card card-header">
-      <a class="my-0 font-weight-normal" routerLink="/productsdetails/{{product.id}}" routerLinkActive="active">View</a>
+      <a
+        class="my-0 font-weight-normal"
+        routerLink="/productsdetails/{{ product.id }}"
+        routerLinkActive="active"
+        >View</a
+      >
+      <div *ngIf="isAvailableInCart(product); else notInCart">
+        <i class="fas fa-heart fa-2x" style="color: #0099CC;" tooltip="Its already in your cart"></i>
+      </div>
+
+      <ng-template #notInCart>
+        <i class="far fa-heart fa-2x" tooltip="Add to Cart" (click)="add(product)"></i>
+      </ng-template>
     </div>
   </div>
 </div>

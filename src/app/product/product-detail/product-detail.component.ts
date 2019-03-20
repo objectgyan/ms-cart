@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService, ProductModel } from "src/app/product.service";
 import { NotificationService } from "src/app/shared/notification/notification.service";
-import { Location } from '@angular/common';
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-product-detail",
@@ -47,11 +47,18 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     this.notificationService.notifyMessage("Product added successfully");
   }
 
+  isAvailableInCart(productModel: ProductModel): boolean {
+    if (productModel == null) {
+      return false;
+    }
+    return this.productService.checkItemInCart(productModel);
+  }
+
   onClosed() {
     this.showCartMessage = true;
   }
 
-  back(){
-    this.location.back()
+  back() {
+    this.location.back();
   }
 }

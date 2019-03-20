@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService, ProductModel } from "src/app/product.service";
+import { NotificationService } from "src/app/shared/notification/notification.service";
 
 @Component({
   selector: "app-product-listing",
@@ -17,7 +18,8 @@ export class ProductListingComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit() {
@@ -45,5 +47,15 @@ export class ProductListingComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.priceSubs.unsubscribe();
     this.categorySubs.unsubscribe();
+  }
+
+  isAvailableInCart(productModel: ProductModel): boolean {
+    return this.productService.checkItemInCart(productModel);
+  }
+
+  add(product: ProductModel) {
+    console.log("called");
+    this.productService.addItemToCart(product);
+    this.notificationService.notifyMessage("Product added successfully");
   }
 }

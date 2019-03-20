@@ -9,22 +9,31 @@
           alt="{{ product?.name }}"
         />
         <hr />
-        <button
+        <!-- <button
           *ngIf="!itemAdded"
           type="button"
           class="btn btn-primary"
           (click)="add(product)"
         >
           Add to Cart
-        </button>
-        <alert
-          *ngIf="itemAdded"
-          [dismissOnTimeout]="3000"
-          type="success"
-          (onClosed)="onClosed()"
-          >Item added to cart</alert
-        >
-        <h4 *ngIf="showCartMessage">Item added to cart</h4>
+        </button> -->
+
+        <div *ngIf="isAvailableInCart(product); else notInCart">
+          <i
+            class="fas fa-heart fa-2x"
+            style="color: #0099CC;"
+            tooltip="Its already in your cart"
+          ></i>
+        </div>
+
+        <ng-template #notInCart>
+          <i
+            class="far fa-heart fa-2x"
+            tooltip="Add to Cart"
+            (click)="add(product)"
+          ></i>
+        </ng-template>
+
         <h4 class="my-0 font-weight-normal">${{ product?.price }}</h4>
         <a
           class="card-header my-0 font-weight-normal"
@@ -39,48 +48,101 @@
   <div class="col-lg-6">
     <accordion [closeOthers]="true">
       <accordion-group heading="Product Description " [isOpen]="true">
-          <h2
-          >Rating :
-          <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
-          <b>{{ "6" }}</b></h2>
+        <h2>{{ product?.name }}</h2>
         <hr />
         <dl class="row">
-            <dt class="col-sm-3">Description lists</dt>
-            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-          
-            <dt class="col-sm-3">Euismod</dt>
-            <dd class="col-sm-9">
-              <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
-              <p>Donec id elit non mi porta gravida at eget metus.</p>
-            </dd>
-          
-            <dt class="col-sm-3">Malesuada porta</dt>
-            <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
-          
-            <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-            <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-          
-            <dt class="col-sm-3">Nesting</dt>
-            <dd class="col-sm-9">
-              <dl class="row">
-                <dt class="col-sm-4">Nested definition list</dt>
-                <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-              </dl>
-            </dd>
-          </dl>
+          <dt class="col-sm-3">Description lists</dt>
+          <dd class="col-sm-9">
+            A description list is perfect for defining terms.
+          </dd>
+
+          <dt class="col-sm-3">Euismod</dt>
+          <dd class="col-sm-9">
+            <p>
+              Vestibulum id ligula porta felis euismod semper eget lacinia odio
+              sem nec elit.
+            </p>
+            <p>Donec id elit non mi porta gravida at eget metus.</p>
+          </dd>
+
+          <dt class="col-sm-3">Malesuada porta</dt>
+          <dd class="col-sm-9">
+            Etiam porta sem malesuada magna mollis euismod.
+          </dd>
+
+          <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+          <dd class="col-sm-9">
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            nibh, ut fermentum massa justo sit amet risus.
+          </dd>
+
+          <dt class="col-sm-3">Nesting</dt>
+          <dd class="col-sm-9">
+            <dl class="row">
+              <dt class="col-sm-4">Nested definition list</dt>
+              <dd class="col-sm-8">
+                Aenean posuere, tortor sed cursus feugiat, nunc augue blandit
+                nunc.
+              </dd>
+            </dl>
+          </dd>
+        </dl>
       </accordion-group>
       <accordion-group heading="Specification">
-        <p>Some content</p>
+        <h2>
+          Rating :
+          <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
+          <b>{{ "6" }}</b>
+        </h2>
+        <hr />
+        <dl class="row">
+          <dt class="col-sm-3">Description lists</dt>
+          <dd class="col-sm-9">
+            A description list is perfect for defining terms.
+          </dd>
+
+          <dt class="col-sm-3">Euismod</dt>
+          <dd class="col-sm-9">
+            <p>
+              Vestibulum id ligula porta felis euismod semper eget lacinia odio
+              sem nec elit.
+            </p>
+            <p>Donec id elit non mi porta gravida at eget metus.</p>
+          </dd>
+
+          <dt class="col-sm-3">Malesuada porta</dt>
+          <dd class="col-sm-9">
+            Etiam porta sem malesuada magna mollis euismod.
+          </dd>
+
+          <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+          <dd class="col-sm-9">
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            nibh, ut fermentum massa justo sit amet risus.
+          </dd>
+
+          <dt class="col-sm-3">Nesting</dt>
+          <dd class="col-sm-9">
+            <dl class="row">
+              <dt class="col-sm-4">Nested definition list</dt>
+              <dd class="col-sm-8">
+                Aenean posuere, tortor sed cursus feugiat, nunc augue blandit
+                nunc.
+              </dd>
+            </dl>
+          </dd>
+        </dl>
       </accordion-group>
       <accordion-group heading="Q&A">
         <p>Some content</p>
       </accordion-group>
       <accordion-group heading="Ratings & Reviews">
         <div>
-          <h2
-            >Rating :
+          <h2>
+            Rating :
             <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
-            <b>{{ "7" }}</b></h2>
+            <b>{{ "7" }}</b>
+          </h2>
           <hr />
           This content is straight in the template.This content is straight in
           the template.This content is straight in the template.This content is
@@ -98,12 +160,13 @@
           template.
           <br />
         </div>
-        <hr style="height:1px;border:none;color:#333;background-color:#333;">
+        <hr style="height:1px;border:none;color:#333;background-color:#333;" />
         <div>
-            <h2
-            >Rating :
+          <h2>
+            Rating :
             <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
-            <b>{{ "6" }}</b></h2>
+            <b>{{ "6" }}</b>
+          </h2>
           <hr />
           This content is straight in the template.This content is straight in
           the template.This content is straight in the template.This content is
@@ -121,12 +184,13 @@
           template.
           <br />
         </div>
-        <hr style="height:1px;border:none;color:#333;background-color:#333;">
+        <hr style="height:1px;border:none;color:#333;background-color:#333;" />
         <div>
-            <h2
-            >Rating :
+          <h2>
+            Rating :
             <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
-            <b>{{ "5" }}</b></h2>
+            <b>{{ "5" }}</b>
+          </h2>
           <hr />
           This content is straight in the template.This content is straight in
           the template.This content is straight in the template.This content is
@@ -144,12 +208,13 @@
           template.
           <br />
         </div>
-        <hr style="height:1px;border:none;color:#333;background-color:#333;">
+        <hr style="height:1px;border:none;color:#333;background-color:#333;" />
         <div>
-            <h2
-            >Rating :
+          <h2>
+            Rating :
             <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
-            <b>{{ "8" }}</b></h2>
+            <b>{{ "8" }}</b>
+          </h2>
           <hr />
           This content is straight in the template.This content is straight in
           the template.This content is straight in the template.This content is

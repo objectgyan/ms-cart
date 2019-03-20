@@ -26,6 +26,10 @@ export class ProductService {
     this.itemsInCart.push(productModel);
     this.alertnotificationMessage.next(this.itemsInCart.length);
   }
+
+  checkItemInCart(productModel: ProductModel): boolean{
+    return this.itemsInCart.some(c => c.id === productModel.id);
+  }
 }
 
 export class ProductModel {
