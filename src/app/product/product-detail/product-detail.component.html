@@ -27,11 +27,13 @@
         </div>
 
         <ng-template #notInCart>
-          <i
-            class="far fa-heart fa-2x"
-            tooltip="Add to Cart"
-            (click)="add(product)"
-          ></i>
+          <a href="javascript:void(0)">
+            <i
+              class="far fa-heart fa-2x"
+              tooltip="Add to Cart"
+              (click)="add(product)"
+            ></i>
+          </a>
         </ng-template>
 
         <h4 class="my-0 font-weight-normal">${{ product?.price }}</h4>

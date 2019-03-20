@@ -54,8 +54,7 @@ export class ProductListingComponent implements OnInit, OnDestroy {
   }
 
   add(product: ProductModel) {
-    console.log("called");
     this.productService.addItemToCart(product);
-    this.notificationService.notifyMessage("Product added successfully");
+    this.notificationService.notifyMessage(product.name  + " : added successfully");
   }
 }

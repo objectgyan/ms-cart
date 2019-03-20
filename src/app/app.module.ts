@@ -11,8 +11,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { AlertModule } from "ngx-bootstrap/alert";
 import { AccordionModule } from "ngx-bootstrap/accordion";
-import { RatingModule  } from "ngx-bootstrap/rating";
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { RatingModule } from "ngx-bootstrap/rating";
+import { ToastrModule } from "ngx-toastr";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./shared/header/header.component";
@@ -69,6 +70,8 @@ const appRoutes: Routes = [
     AccordionModule.forRoot(),
     RatingModule.forRoot(),
     TooltipModule.forRoot(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(
