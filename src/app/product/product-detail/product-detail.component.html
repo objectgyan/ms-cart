@@ -29,7 +29,8 @@
         <a
           class="card-header my-0 font-weight-normal"
           routerLink="/productsdetails/{{ product?.id }}"
-          routerLinkActive="active" (click)="back()"
+          routerLinkActive="active"
+          (click)="back()"
           >Back</a
         >
       </div>
@@ -38,22 +39,35 @@
   <div class="col-lg-6">
     <accordion [closeOthers]="true">
       <accordion-group heading="Product Description " [isOpen]="true">
-          <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"7"}}</b></b>
-          <hr />
-        This content is straight in the template.This content is straight in the
-        template.This content is straight in the template.This content is
-        straight in the template.This content is straight in the template.This
-        content is straight in the template.This content is straight in the
-        template.This content is straight in the template.This content is
-        straight in the template.This content is straight in the template.This
-        content is straight in the template.This content is straight in the
-        template.This content is straight in the template.This content is
-        straight in the template.This content is straight in the template.This
-        content is straight in the template.This content is straight in the
-        template.This content is straight in the template.This content is
-        straight in the template.This content is straight in the template.This
-        content is straight in the template.This content is straight in the
-        template.
+          <h2
+          >Rating :
+          <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
+          <b>{{ "6" }}</b></h2>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">Description lists</dt>
+            <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+          
+            <dt class="col-sm-3">Euismod</dt>
+            <dd class="col-sm-9">
+              <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+              <p>Donec id elit non mi porta gravida at eget metus.</p>
+            </dd>
+          
+            <dt class="col-sm-3">Malesuada porta</dt>
+            <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+          
+            <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+            <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+          
+            <dt class="col-sm-3">Nesting</dt>
+            <dd class="col-sm-9">
+              <dl class="row">
+                <dt class="col-sm-4">Nested definition list</dt>
+                <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+              </dl>
+            </dd>
+          </dl>
       </accordion-group>
       <accordion-group heading="Specification">
         <p>Some content</p>
@@ -62,60 +76,97 @@
         <p>Some content</p>
       </accordion-group>
       <accordion-group heading="Ratings & Reviews">
-          <div>
-              <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"7"}}</b></b>
-              <hr />
-            This content is straight in the template.This content is straight in
-            the template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.
-          </div>
-          <div>
-              <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"5"}}</b></b>
-              <hr />
-            This content is straight in the template.This content is straight in
-            the template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.
-          </div>
-          <div>
-              <b>Rating : <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp; <b>{{"7"}}</b></b>
-              <hr />
-            This content is straight in the template.This content is straight in
-            the template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.This content is straight in the template.This content is
-            straight in the template.This content is straight in the template.This
-            content is straight in the template.This content is straight in the
-            template.
-          </div>
+        <div>
+          <h2
+            >Rating :
+            <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
+            <b>{{ "7" }}</b></h2>
+          <hr />
+          This content is straight in the template.This content is straight in
+          the template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.
+          <br />
+        </div>
+        <hr style="height:1px;border:none;color:#333;background-color:#333;">
+        <div>
+            <h2
+            >Rating :
+            <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
+            <b>{{ "6" }}</b></h2>
+          <hr />
+          This content is straight in the template.This content is straight in
+          the template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.
+          <br />
+        </div>
+        <hr style="height:1px;border:none;color:#333;background-color:#333;">
+        <div>
+            <h2
+            >Rating :
+            <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
+            <b>{{ "5" }}</b></h2>
+          <hr />
+          This content is straight in the template.This content is straight in
+          the template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.
+          <br />
+        </div>
+        <hr style="height:1px;border:none;color:#333;background-color:#333;">
+        <div>
+            <h2
+            >Rating :
+            <rating (ngModel)="(7)" [max]="10" [readonly]="true"></rating>&nbsp;
+            <b>{{ "8" }}</b></h2>
+          <hr />
+          This content is straight in the template.This content is straight in
+          the template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.This content is straight in the template.This content is
+          straight in the template.This content is straight in the template.This
+          content is straight in the template.This content is straight in the
+          template.
+          <br />
+        </div>
       </accordion-group>
     </accordion>
   </div>
