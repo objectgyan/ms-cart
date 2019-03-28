@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductService, ProductModel } from "src/app/product.service";
-import { NotificationService } from "src/app/shared/notification/notification.service";
 import { Location } from "@angular/common";
+import { NotificationService } from "src/app/shared/notification/notification.service";
 
 @Component({
   selector: "app-product-detail",

@@ -2,9 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, Subject } from "rxjs";
 
-@Injectable({
-  providedIn: "root"
-})
+@Injectable()
 export class ProductService {
 
   itemsInCart: ProductModel[] = [];
