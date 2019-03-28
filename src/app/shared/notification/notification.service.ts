@@ -13,7 +13,11 @@ export class NotificationService {
   alertNotification$ = this.alertnotificationMessage.asObservable();
 
   notifyMessage(message: string) {
-    //this.alertnotificationMessage.next(message);
-    this.toastr.info(message, "", {timeOut: 3000, progressBar: true, closeButton : true});
+    // this.alertnotificationMessage.next(message);
+    this.toastr.info(message, "", {
+      timeOut: 3000,
+      progressBar: true,
+      closeButton: true
+    });
   }
 }

@@ -9,7 +9,7 @@ import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { ProductCategoriesComponent } from "./shared/product-categories/product-categories.component";
 import { ComponentsModule } from "./components.module";
-import { ServicesModule } from "./services.module";
+// import { ServicesModule } from "./services.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { ServicesModule } from "./services.module";
   ],
   imports: [
     RoutingModule,
-    //ServicesModule,
+    // ServicesModule,
     FormsModule,
     AppBoostrapModule,
     ComponentsModule

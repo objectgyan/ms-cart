@@ -25,8 +25,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     TooltipModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot()
- ],
-  exports: [ TooltipModule,
+  ],
+  exports: [
+    TooltipModule,
     ModalModule,
     BsDropdownModule,
     CollapseModule,
@@ -37,7 +38,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     RatingModule,
     TooltipModule,
     BrowserAnimationsModule,
-    ToastrModule]
+    ToastrModule
+  ]
 })
-
-export class AppBoostrapModule {};
+export class AppBoostrapModule {}

@@ -24,10 +24,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.subscription = this.productService.alertNotification$.subscribe(c => this.itemCount = c);
+    this.subscription = this.productService.alertNotification$.subscribe(
+      c => (this.itemCount = c)
+    );
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 }
